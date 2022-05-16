@@ -48,8 +48,8 @@ public class OngUpdate extends HttpServlet {
 		user.setDescription(request.getParameter("description"));
 		UserDao.update(user);
 		
-		CreateOng createOng = new CreateOng();
-		createOng.doGet(request, response);
+		ListOngs listOngs = new ListOngs();
+		listOngs.doGet(request, response);
 	}
 
 }

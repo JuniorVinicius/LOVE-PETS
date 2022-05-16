@@ -22,15 +22,15 @@ public class CreateOng extends HttpServlet {
      
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		List<User> users = UserDao.listAll();
-		
-		request.setAttribute("users", users);
-		
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("all-ongs.jsp");
-		requestDispatcher.forward(request, response);
-	}
+//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		//response.getWriter().append("Served at: ").append(request.getContextPath());
+//		List<User> users = UserDao.listAll();
+//		
+//		request.setAttribute("users", users);
+//		
+//		RequestDispatcher requestDispatcher = request.getRequestDispatcher("all-ongs.jsp");
+//		requestDispatcher.forward(request, response);
+//	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		User user = new User();
@@ -47,7 +47,9 @@ public class CreateOng extends HttpServlet {
 		
 		UserDao.create(user);
 		
-		doGet(request, response);
+		ListOngs listOngs = new ListOngs();
+		
+		listOngs.doGet(request, response);
 	}
 
 }

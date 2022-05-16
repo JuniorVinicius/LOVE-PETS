@@ -18,7 +18,9 @@
 		<input name="zipCode" type="text" placeholder="Zip Code" value="${user.zipCode}"/>
 		<input name="address" type="text" placeholder="Address" value="${user.address}"/>
 		<input name="addressNumber" type="text" placeholder="Address Number" value="${user.addressNumber}"/>
-		<input name="description" type="text" placeholder="Description" value="${user.description}"/>
+		<textarea name="description" placeholder="Description" >
+		${user.description}
+		</textarea>
 		<button type="submit">Save</button>
 	</form>
 </body>
