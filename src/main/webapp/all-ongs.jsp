@@ -22,6 +22,7 @@
 					<p>${user.city}</p>
 					<p>${user.zipCode}</p>
 					<p>${user.address}</p>
+					<p>${user.neighborhood}</p>
 					<p>${user.addressNumber}</p>
 					<p>${user.description}</p>
 					<div>

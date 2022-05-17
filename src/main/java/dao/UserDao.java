@@ -17,7 +17,7 @@ public class UserDao implements CRUD{
 	private static String sql;
 	
 	public static void create(User user) {
-		sql = "INSERT INTO Ongs VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		sql = "INSERT INTO Ongs VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -28,8 +28,9 @@ public class UserDao implements CRUD{
 			preparedStatement.setString(5, user.getCity());
 			preparedStatement.setString(6, user.getZipCode());
 			preparedStatement.setString(7, user.getAddress());
-			preparedStatement.setString(8, user.getAddressNumber());
-			preparedStatement.setString(9, user.getDescription());
+			preparedStatement.setString(8, user.getNeighborhood());
+			preparedStatement.setString(9, user.getAddressNumber());
+			preparedStatement.setString(10, user.getDescription());
 			
 			preparedStatement.executeUpdate();
 			
@@ -83,6 +84,7 @@ public class UserDao implements CRUD{
 				user.setCity(resultSet.getString("city"));
 				user.setZipCode(resultSet.getString("zipCode"));
 				user.setAddress(resultSet.getString("address"));
+				user.setNeighborhood(resultSet.getString("neighborhood"));
 				user.setAddressNumber(resultSet.getString("addressNumber"));
 				user.setDescription(resultSet.getString("description"));
 				
@@ -123,6 +125,7 @@ public class UserDao implements CRUD{
 				user.setCity(resultSet.getString("city"));
 				user.setZipCode(resultSet.getString("zipCode"));
 				user.setAddress(resultSet.getString("address"));
+				user.setNeighborhood(resultSet.getString("neighborhood"));
 				user.setAddressNumber(resultSet.getString("addressNumber"));
 				user.setDescription(resultSet.getString("description"));
 
@@ -140,7 +143,7 @@ public class UserDao implements CRUD{
 	}
 	
 	public static void update(User user) {
-		sql = "UPDATE Ongs Set ongName=?, typePets=?, email=?, phone=?, city=?, zipCode=?, address=?, addressNumber=?, description=? WHERE id=?";
+		sql = "UPDATE Ongs Set ongName=?, typePets=?, email=?, phone=?, city=?, zipCode=?, address=?, neighborhood=?, addressNumber=?, description=? WHERE id=?";
 		
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -151,9 +154,10 @@ public class UserDao implements CRUD{
 			preparedStatement.setString(5, user.getCity());
 			preparedStatement.setString(6, user.getZipCode());
 			preparedStatement.setString(7, user.getAddress());
-			preparedStatement.setString(8, user.getAddressNumber());
-			preparedStatement.setString(9, user.getDescription());
-			preparedStatement.setInt(10, user.getId());
+			preparedStatement.setString(8, user.getNeighborhood());
+			preparedStatement.setString(9, user.getAddressNumber());
+			preparedStatement.setString(10, user.getDescription());
+			preparedStatement.setInt(11, user.getId());
 			
 			preparedStatement.executeUpdate();
 			

@@ -11,6 +11,7 @@ public class User {
 	private String address;
 	private String addressNumber;
 	private String description;
+	private String neighborhood;
 	
 	public int getId() {
 		return id;
@@ -60,6 +61,14 @@ public class User {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	
+	public String getNeighborhood() {
+		return neighborhood;
+	}
+	public void setNeighborhood(String neighborhood) {
+		this.neighborhood = neighborhood;
+	}
+		
 	public String getAddressNumber() {
 		return addressNumber;
 	}
@@ -75,7 +84,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", ongName=" + ongName + ", typePets=" + typePets + ", email=" + email + ", phone="
-				+ phone + ", city=" + city + ", zipCode=" + zipCode + ", address=" + address + ", addressNumber="
+				+ phone + ", city=" + city + ", zipCode=" + zipCode + ", address=" + address + ", neighborhood=" + neighborhood + ", addressNumber="
 				+ addressNumber + ", description=" + description + "]";
 	}
 	

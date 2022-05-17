@@ -44,6 +44,7 @@ public class OngUpdate extends HttpServlet {
 		user.setCity(request.getParameter("city"));
 		user.setZipCode(request.getParameter("zipCode"));
 		user.setAddress(request.getParameter("address"));
+		user.setAddress(request.getParameter("neighborhood"));
 		user.setAddressNumber(request.getParameter("addressNumber"));
 		user.setDescription(request.getParameter("description"));
 		UserDao.update(user);

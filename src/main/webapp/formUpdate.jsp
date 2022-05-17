@@ -17,6 +17,7 @@
 		<input name="city" type="text" placeholder="City" value="${user.city}"/>
 		<input name="zipCode" type="text" placeholder="Zip Code" value="${user.zipCode}"/>
 		<input name="address" type="text" placeholder="Address" value="${user.address}"/>
+		<input name="neighborhood" type="text" placeholder="Neighborhood" value="${user.neighborhood}"/>
 		<input name="addressNumber" type="text" placeholder="Address Number" value="${user.addressNumber}"/>
 		<textarea name="description" placeholder="Description" >
 		${user.description}
